@@ -21,5 +21,17 @@ int main() {
 
     int a = 1977;
     cout << intToHex(a) << endl;
+
+    string s4 = "razzle dazzle giddyup";
+
+    string tmp;
+
+    StringTokenizer st(s4);
+    cout << "there are " << st.countTokens() << " tokens.\n";
+    while (st.hasMoreTokens()){
+        st.nextToken(tmp);
+        cout << "token = " << tmp << '\n';
+    }
+
     return 0;
 }

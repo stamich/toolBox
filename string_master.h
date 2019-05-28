@@ -60,4 +60,65 @@ void splitAnyType(const std::basic_string<T>& s, T t, std::vector<std::basic_str
     }
 }
 
+class StringTokenizer{
+
+private:
+    StringTokenizer(){};
+    std::string delimiter_;
+    std::string str;
+    int counter;
+    int begin;
+    int end;
+
+public:
+    StringTokenizer(const std::string& s, const char* delimiter = NULL):
+    str(s), counter(-1), begin(0), end(0){
+        if (delimiter){
+            delimiter_ = "\f\n\r\t\v"; // default to whitespace
+        } else {
+            delimiter_ = delimiter;
+        }
+
+        begin = str.find_first_not_of(delimiter_);
+        end = str.find_first_of(delimiter_, begin);
+    }
+
+    size_t countTokens(){
+        if (counter >= 0){
+            return counter;
+        }
+
+        std::string::size_type n = 0;
+        std::string::size_type i = 0;
+
+        for (;;){
+            if ((i = str.find_first_not_of(delimiter_, i)) == std::string::npos){
+                break;
+            }
+
+            i = str.find_first_of(delimiter_, i + 1);
+            n++;
+            if (i == std::string::npos){
+                break;
+            }
+        }
+        return (counter = n);
+    }
+
+    bool hasMoreTokens(){
+        return (begin != end);
+    }
+
+    void nextToken(std::string& s){
+        if (begin != std::string::npos && end != std::string::npos){
+            s = str.substr(begin, end - begin);
+            begin = str.find_first_not_of(delimiter_, end);
+            end = str.find_first_of(delimiter_, begin);
+        } else if (begin != std::string::npos && end == std::string::npos){
+            s = str.substr(begin, str.length() - begin);
+            begin = str.find_first_not_of(delimiter_, end);
+        }
+    }
+};
+
 #endif //TOOLBOX_STRING_MASTER_H

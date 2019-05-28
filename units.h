@@ -27,17 +27,17 @@ namespace units {
     }
 
     template <typename IntVector1, typename IntVector2>
-    unit<typename intvector_add<IntVector1, IntVector2>::type> operator*(unit<IntVector1> u1, unit<IntVector2> u2){
+    unit<typename intVectorAdd<IntVector1, IntVector2>::type> operator*(unit<IntVector1> u1, unit<IntVector2> u2){
         return u1.value() * u2.value();
     }
 
     template <typename IntVector1, typename IntVector2>
-    unit<typename intvector_subtract<IntVector1, IntVector2>::type> operator/(unit<IntVector1> u1, unit<IntVector2> u2){
+    unit<typename intVectorSubtract<IntVector1, IntVector2>::type> operator/(unit<IntVector1> u1, unit<IntVector2> u2){
         return u1.value() / u2.value();
     }
 
     template <int Mass, int Time, int Length>
-    using system = intvector<Mass, Time, Length>;
+    using system = intVector<Mass, Time, Length>;
 
     using scalar = unit<system<0, 0, 0>>;
     using mass = unit<system<1, 0, 0>>;
