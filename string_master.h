@@ -29,6 +29,7 @@ void rightTrim(std::string& s, char c){
     s.erase(it, s.end());
 }
 
+// splitting a string
 void splitString(const std::string &s, char c, std::vector<std::string> &v){
     std::string::size_type i = 0;
     std::string::size_type j = s.find(c);
@@ -60,8 +61,34 @@ void splitAnyType(const std::basic_string<T>& s, T t, std::vector<std::basic_str
     }
 }
 
-class StringTokenizer{
+// join sequence of strings
+void join(const std::vector<std::string>& v, char c, std::string& s){
+    s.clear();
+    for (std::vector<std::string>::const_iterator p = v.begin(); p != v.end(); p++) {
+        s += *p;
+        if (p != v.end() - 1){
+            s += c;
+        }
+    }
+}
 
+// counting unique characters
+template<typename T>
+int countUnique(const std::basic_string<T>& s){
+    using std::basic_string;
+
+    basic_string<T> chars;
+
+    for (typename basic_string<T>::const_iterator p = s.begin(); p != s.end(); ++p) {
+        if (chars.find(*p) == basic_string<T>::npos){
+            chars += *p;
+        }
+    }
+    return (chars.length());
+}
+
+// tokenizing a string
+class StringTokenizer{
 private:
     StringTokenizer(){};
     std::string delimiter_;
@@ -69,7 +96,6 @@ private:
     int counter;
     int begin;
     int end;
-
 public:
     StringTokenizer(const std::string& s, const char* delimiter = NULL):
     str(s), counter(-1), begin(0), end(0){
