@@ -8,6 +8,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cctype>
+#include <cwctype>
+#include <stdexcept>
 
 template <typename T>
 void padString(std::basic_string<T> &s, typename std::basic_string<T>::sizeType st, T t){
@@ -87,6 +90,17 @@ int countUnique(const std::basic_string<T>& s){
     return (chars.length());
 }
 
+// remove all substring from a string
+template<typename T>
+void removeSubstring(std::basic_string<T>& s, const std::basic_string<T>& p){
+
+     typename std::basic_string<T>::size_type n = p.length();
+
+    for (typename std::basic_string<T>::size_type i = s.find(p); i != std::basic_string<T>::npos; i = s.find(p)) {
+        s.erase(i, n);
+    }
+}
+
 // tokenizing a string
 class StringTokenizer{
 private:
@@ -146,5 +160,29 @@ public:
         }
     }
 };
+
+void toUpperCase(std::basic_string<char>& s){
+    for (std::basic_string<char>::iterator p = s.begin(); p != s.end(); ++p){
+        *p = toupper(*p);
+    }
+}
+
+void toUpperCase(std::basic_string<wchar_t>& s){
+    for (std::basic_string<wchar_t>::iterator p = s.begin(); p != s.end(); ++p){
+        *p = toupper(*p);
+    }
+}
+
+void toLowerCase(std::basic_string<char>& s){
+    for (std::basic_string<char>::iterator p = s.begin(); p != s.end(); ++p){
+        *p = tolower(*p);
+    }
+}
+
+void toLowerCase(std::basic_string<wchar_t >& s){
+    for (std::basic_string<wchar_t>::iterator p = s.begin(); p != s.end(); ++p){
+        *p = tolower(*p);
+    }
+}
 
 #endif //TOOLBOX_STRING_MASTER_H

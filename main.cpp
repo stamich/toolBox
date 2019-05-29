@@ -2,6 +2,7 @@
 #include "comparision.h"
 #include "conversion.h"
 #include "concurrency.h"
+#include "date_time.h"
 #include "dumper.h"
 #include "evector.h"
 #include "intvector.h"
@@ -33,5 +34,9 @@ int main() {
         cout << "token = " << tmp << '\n';
     }
 
+    string s5 = "One fish, two fish, blue fish.";
+    string s6 = "fish";
+    removeSubstring(s5, s6);
+    cout << s5 << '\r\n';
     return 0;
 }
