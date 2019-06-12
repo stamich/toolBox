@@ -1,5 +1,5 @@
 //
-// Created by EB79OJ on 2018-09-20.
+// Created by Michal S. on 2018-09-20.
 //
 
 #ifndef TOOLBOX_DUMPER_H

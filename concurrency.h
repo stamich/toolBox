@@ -1,5 +1,5 @@
 //
-// Created by EB79OJ on 2018-04-12.
+// Created by Michal S. on 2018-04-12.
 //
 
 #ifndef TOOLBOX_CONCURRENCY_H

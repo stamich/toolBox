@@ -1,5 +1,5 @@
 //
-// Created by EB79OJ on 2019-05-29.
+// Created by Michal S. on 2019-05-29.
 //
 
 #ifndef TOOLBOX_DATE_TIME_H

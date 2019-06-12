@@ -1,3 +1,7 @@
+//
+// Created by Michal S. on 2018-07-11.
+//
+
 #ifndef TOOLBOX_INTVECTOR_H
 #define TOOLBOX_INTVECTOR_H
 

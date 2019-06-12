@@ -1,5 +1,5 @@
 //
-// Created by EB79OJ on 2018-06-28.
+// Created by Michal S. on 2018-06-28.
 //
 
 #ifndef TOOLBOX_COMPARISION_H

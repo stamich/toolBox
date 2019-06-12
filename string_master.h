@@ -1,5 +1,5 @@
 //
-// Created by EB79OJ on 2019-01-09.
+// Created by Michal S. on 2019-01-09.
 //
 
 #ifndef TOOLBOX_STRING_MASTER_H

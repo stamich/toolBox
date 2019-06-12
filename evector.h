@@ -1,3 +1,7 @@
+//
+// Created by Michal S. on 2018-06-28.
+//
+
 #ifndef TOOLBOX_EVECTOR_H
 #define TOOLBOX_EVECTOR_H
 

@@ -1,3 +1,7 @@
+//
+// Created by Michal S. on 2018-09-21.
+//
+
 #ifndef TOOLBOX_SAFE_PRINTF_H
 #define TOOLBOX_SAFE_PRINTF_H
 
