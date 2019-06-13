@@ -6,8 +6,10 @@
 #include "date_time.h"
 #include "dumper.h"
 #include "evector.h"
+#include "files.h"
 #include "intvector.h"
 #include "safe_printf.h"
+#include "science.h"
 #include "string_master.h"
 #include "units.h"
 

@@ -32,6 +32,23 @@ std::string hashedInt(int& i){
     }
 }
 
+template<typename T>
+void printRange(T first, T last, char delimiter =',', std::ostream& out = std::cout){
+    out << "{";
+    while (first != last){
+        out << *first;
+        if (++first != last){
+            out << delimiter << ' ';
+        }
+    }
+    out << "}" << std::endl;
+}
+
+template<typename U>
+void printContainer(const U& u, char delimiter = ',', std::ostream& out = std::cout){
+    printRange(u.begin(), u.end(), delimiter, out);
+}
+
 //std::string sortedString(std::string& s, ...){
 //    std::set<std::string> setStr;
 //    setStr.insert(s);
