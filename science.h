@@ -1,5 +1,5 @@
 //
-// Created by EB79OJ on 2019-06-13.
+// Created by Michal S. on 2019-02-13.
 //
 
 #ifndef TOOLBOX_SCIENCE_H
